@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2FA OTP Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+  <div class="blur-bg">
+    <div class="container">
+      <div class="auth-box">
+        <h2>2-Factor Authentication</h2>
+        <p>We’ve sent a 6-digit OTP to your device.</p>
+        <form id="otp-form" autocomplete="off">
+          <div class="otp-inputs">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" maxlength="1" pattern="[0-9]*" inputmode="numeric">
+          </div>
+          <button type="submit" class="neon-button">Verify</button>
+        </form>
+        <div class="countdown" id="countdown">Resend OTP in 30s</div>
+        <div class="resend" id="resend"><a href="#" onclick="resendOTP()">Resend OTP</a></div>
+        <div class="success-message" id="success-msg">✅ OTP Verified Successfully!</div>
+        <div class="error-message" id="error-msg">❌ Incorrect OTP. Please try again.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
